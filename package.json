@@ -1,0 +1,39 @@
+{
+  "name": "RandomUser",
+  "version": "1.0.0",
+  "description": "Micro user-management platform",
+  "main": "lib/server.js",
+  "repository": "https://github.com/kleva-j/User-Management_UI.git",
+  "author": "Michael Obasi",
+  "license": "MIT",
+  "scripts": {
+    "dev": "pm2 start lib/server.js --name 'my-app' --watch --interpreter babel-node"
+  },
+  "babel": {
+    "presets": [
+      "react",
+      "env",
+      "stage-2"
+    ]
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^2.5.1"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-node": "^0.0.1-security",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.2",
+    "express": "^4.17.1",
+    "pm2": "^4.4.0"
+  }
+}
