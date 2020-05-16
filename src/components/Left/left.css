@@ -1,0 +1,146 @@
+.Left-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Container {
+  width: 500px;
+}
+
+.Top-section {
+  text-align: left;
+}
+
+.Top-section .greeting {
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+  font-size: 49px;
+  line-height: 120px;
+  font-weight: 200;
+  letter-spacing: -0.05px;
+  color: #ffffff;
+  opacity: 1;
+  vertical-align: middle;
+}
+
+.Top-section .name {
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+  font-size: 37px;
+  line-height: 122px;
+  font-weight: 700;
+  letter-spacing: -0.04px;
+  color: #ffffff;
+  opacity: 1;
+  vertical-align: middle;
+}
+
+.Top-section .paragraph {
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 40px;
+  letter-spacing: 0.23px;
+  color: #ffffff;
+  opacity: 0.66;
+  margin-top: -20px;
+}
+
+.Top-section .form-control {
+  background: #3c3f54 0% 0% no-repeat padding-box;
+  width: 622px;
+  height: 94px;
+  font-family: "Poppins";
+  color: #ffffff;
+  font-size: 22px;
+  line-height: 79px;
+  border: 1px solid #3c3f54;
+  border-radius: 28px;
+  opacity: 0.7;
+  outline: none;
+  margin: 20px 0;
+  box-sizing: border-box;
+  padding-left: 100px;
+}
+
+.form-control::placeholder {
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 79px;
+  letter-spacing: -0.02px;
+  color: #ffffff;
+  opacity: 0.7;
+}
+
+.Bottom-section {
+  width: 400px;
+  box-sizing: border-box;
+}
+
+.Show-users {
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02px;
+  color: #ffffff;
+  opacity: 0.7;
+}
+
+.Button-container {
+  display: flex;
+  justify-content: space-between;
+  width: inherit;
+  align-items: center;
+}
+
+.Button {
+  display: inline-block;
+  transition: 300ms all ease-out;
+}
+
+.Button > div {
+  height: 90px;
+  width: 100px;
+  font-size: 20px;
+  border-radius: 20px;
+  opacity: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Button > small {
+  font-size: 13px;
+  color: #ffffff;
+}
+
+.Button.all > div {
+  background: #f935a9 0% 0% no-repeat padding-box;
+}
+
+.Button.male > div {
+  background: #30bbb5 0% 0% no-repeat padding-box;
+}
+
+.Button.female > div {
+  background: #7946c1 0% 0% no-repeat padding-box;
+}
+
+.active {
+  transform: scale(1.2);
+  transform-origin: center;
+  transition-duration: 300ms;
+}
+
+.active > div {
+  box-shadow: 0px 3px 30px #00000029;
+}
+
+.all.active {
+  transform: scale(1.2);
+}

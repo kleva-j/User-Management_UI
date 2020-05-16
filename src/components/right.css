@@ -1,0 +1,422 @@
+.Right-section {
+  background: #f7f7ff 0% 0% no-repeat padding-box;
+  border: 1px solid #707070;
+  padding: 20px 80px 30px;
+  box-sizing: border-box;
+  border-radius: 28px;
+  opacity: 1;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.Heading {
+  text-align: left;
+  font-family: Poppins, sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 60px;
+  letter-spacing: -0.04px;
+  color: #262a41;
+  opacity: 1;
+  padding: 0;
+  margin: 0;
+}
+
+.filterBy {
+  text-align: left;
+  font-family: Poppins, sans-serif;
+  font-size: 18px;
+  padding-bottom: 10px;
+  font-weight: 300;
+  letter-spacing: -0.02px;
+  color: #262a41;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.Filter-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.Filter-container .form-control {
+  background: rgba(60, 63, 84, 0.11) 0% 0% no-repeat padding-box;
+  border: 1px solid rgb(60, 63, 84, 0.11);
+  font-size: 16px;
+  font-family: Poppins, sans-serif;
+  line-height: 50px;
+  padding-left: 50px;
+  width: 320px;
+  height: 45px;
+  border-radius: 35px;
+  color: #262a4185;
+  outline: none;
+  margin: -30px;
+}
+
+.Filter-container input::placeholder {
+  text-align: left;
+  font-size: 16px;
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+  line-height: 45px;
+  letter-spacing: -0.02px;
+  color: #262a4185;
+  opacity: 0.52;
+}
+
+.Dropdown {
+  position: relative;
+}
+
+.Dropdown::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 15px 20px 0 0;
+  font-size: 12px;
+  color: black;
+}
+
+Select {
+  text-align: center;
+  appearance: none;
+  outline: none;
+  background-image: none;
+  box-shadow: none;
+  font-family: Poppins, sans-serif;
+  border: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.Select-options {
+  background: rgba(60, 63, 84, 0.11) 0% 0% no-repeat padding-box;
+  color: #262a41ba;
+  padding: 0 25px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.02px;
+  line-height: 45px;
+  border-radius: 35px;
+  min-width: 160px;
+  position: relative;
+  display: flex;
+}
+
+.Show-country {
+  align-items: flex-end;
+}
+
+.Show-country b {
+  font-size: 15px;
+  line-height: 40px;
+  font-weight: 600;
+  font-family: Poppins, sans-serif;
+  margin-left: 10px;
+  color: rgb(0, 0, 0, 0.62);
+}
+
+.Wrapper {
+  flex-grow: 1;
+  margin-top: 10px;
+}
+
+.UserItem {
+  background: #fcfcff 0% 0% no-repeat padding-box;
+  box-shadow: 10px 10px 40px #0000000d;
+  border-radius: 18px;
+  opacity: 1;
+  display: flex;
+  justify-content: space-around;
+  height: 160px;
+  align-items: center;
+  padding: 30px;
+  box-sizing: border-box;
+  margin: 20px 0;
+}
+
+.UserItem .Profile-pic {
+  vertical-align: middle;
+  align-items: center;
+  border: 5px solid #75d6d1;
+  border-radius: 50%;
+  overflow: hidden;
+  height: 90px;
+  width: 90px;
+}
+
+.UserItem img {
+  height: 90px;
+}
+
+.ViewChild > article {
+  display: flex;
+  align-items: center;
+  margin: 15px 0 0;
+  cursor: pointer;
+}
+
+.ViewChild > article > * {
+  margin: 0;
+  padding: 0;
+}
+
+.ViewChild > article h6 {
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  line-height: 69px;
+  font-weight: 500;
+  letter-spacing: -0.02px;
+  color: rgba(38, 42, 65, 0.52);
+  margin-left: 15px;
+}
+
+.ViewChild .Profile-section {
+  display: flex;
+}
+
+.ViewChild .Profile-section .Profile-pic {
+  height: 220px;
+  width: 220px;
+  border: 6px solid #75d6d1;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.ViewChild .Profile-section .Profile-pic img {
+  width: inherit;
+}
+
+.ViewChild .Profile-info {
+  display: flex;
+  flex-direction: column;
+  padding-left: 30px;
+}
+
+.ViewChild .Profile-info > div {
+  display: flex;
+}
+
+.ViewChild .Profile-info .Name,
+.ViewChild .Profile-info .Age {
+  text-align: left;
+  font-family: Poppins, sans-serif;
+  font-size: 29px;
+  font-weight: 700;
+  line-height: 70px;
+  letter-spacing: -0.03px;
+  color: #262a41;
+  margin: 0;
+  padding: 0;
+  width: fit-content;
+}
+
+.ViewChild .Profile-info .Age {
+  text-align: left;
+  font-size: 25px;
+  font-weight: 200;
+  letter-spacing: -0.03px;
+  color: #262a41;
+  opacity: 1;
+  margin-left: 7px;
+}
+
+.ViewChild .Profile-info .Address {
+  text-align: left;
+  font-family: Poppins, sans-serif;
+  font-size: 19px;
+  line-height: 37px;
+  font-weight: 300;
+  letter-spacing: -0.02px;
+  color: #262a41;
+  opacity: 0.69;
+  margin: 0;
+}
+
+.Info-section {
+  flex-grow: 1;
+  margin: 0 30px;
+}
+
+.Info-section h6 {
+  text-align: left;
+  font-family: Poppins, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 0px;
+  padding: 15px 0 19px;
+  letter-spacing: -0.02px;
+  color: #262a41;
+  margin: 0;
+}
+
+.Info-section .Address {
+  text-align: left;
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  font-style: italic;
+  line-height: 0px;
+  letter-spacing: -0.02px;
+  color: #262a41b0;
+  padding: 15px 0 8px;
+  margin: 0;
+}
+
+.Info-section .Extra-info {
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Info-section .Extra-info .Email,
+.ViewChild .Profile-info .Email {
+  text-align: left;
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 0;
+  letter-spacing: -0.12px;
+  color: #262a4185;
+  margin: 0 15px 0 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+.Info-section .Extra-info .Phone,
+.ViewChild .Profile-info .Phone,
+.ViewChild .Profile-info .Phone2 {
+  text-align: left;
+  font-family: Poppins, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 0;
+  letter-spacing: -0.12px;
+  color: #262a4185;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+.ViewChild .Profile-info .Email {
+  background: #e3e3ed 0% 0% no-repeat padding-box;
+  border-radius: 40px;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 45px;
+  width: fit-content;
+  letter-spacing: -0.02px;
+  color: rgb(38, 42, 65, .52);
+  padding: 0 20px;
+  margin: 15px 0;
+  box-shadow: 10px 10px 40px #0000000D;
+}
+
+.ViewChild .Profile-info .Joined {
+  background: rgb(249, 53, 169, .15) 0% 0% no-repeat padding-box;
+  border-radius: 40px;
+  width: fit-content;
+  padding: 0 20px;
+  font-size: 15px;
+  line-height: 45px;
+  font-weight: 600;
+  font-family: Poppins, sans-serif;
+  color: rgb(38, 42, 65, .70);
+  letter-spacing: -0.18;
+  margin: 10px 0;
+}
+
+.ViewChild .Profile-info .Phone,
+.ViewChild .Profile-info .Phone2 {
+  margin: 10px 0;
+}
+
+.Info-section .Extra-info .ArrowRight {
+  background: #30bbb5 0% 0% no-repeat padding-box;
+  box-shadow: 2px 15px 30px #30bbb574;
+  border-radius: 13px;
+  opacity: 1;
+  height: 48px;
+  width: 51px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.Right-section .Bottom-section {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.Download {
+  background: #7946c1 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 35px;
+  opacity: 1;
+  display: flex;
+  justify-content: space-evenly;
+  width: 250px;
+  cursor: pointer;
+}
+
+.Download-text {
+  text-align: left;
+  font-size: 17px;
+  line-height: 50px;
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.19px;
+  color: #ffffff;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.disabled {
+  cursor: not-allowed;
+}
+
+.disabled > * {
+  pointer-events: none;
+}
+
+.Download.disabled,
+.Download.disabled .Download-text {
+  opacity: 0.4;
+}
+
+.Pagination {
+  border-radius: 11px;
+  opacity: 1;
+  display: inline-block;
+  height: 48px;
+  width: 51px;
+  cursor: pointer;
+}
+
+.Pagination.angle-left.disabled,
+.Pagination.angle-right.disabled {
+  background: grey;
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.Pagination.angle-left {
+  background: #e2e2ea 0% 0% no-repeat padding-box;
+  border-radius: 11px;
+  opacity: 1;
+  margin-right: 10px;
+}
+
+.Pagination.angle-right {
+  background: #262a41 0% 0% no-repeat padding-box;
+  box-shadow: 4px 5px 20px #0000001a;
+}
