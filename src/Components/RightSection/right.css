@@ -22,6 +22,9 @@
   opacity: 1;
   padding: 0;
   margin: 0;
+  animation-name: FadeIn;
+  animation-duration: 300ms;
+  animation-timing-function: ease-out;
 }
 
 .filterBy {
@@ -125,6 +128,13 @@ Select {
 .Wrapper {
   flex-grow: 1;
   margin-top: 10px;
+  position: relative;
+}
+
+.AnimateUserListIn {
+  animation-name: AnimateUserList;
+  animation-timing-function: ease-out;
+  animation-duration: 400ms;
 }
 
 .UserItem {
@@ -155,6 +165,12 @@ Select {
   height: 90px;
 }
 
+.ViewChild .Profile-section {
+  animation-name: AnimateViewChild;
+  animation-timing-function: ease-out;
+  animation-duration: 300ms;
+}
+
 .ViewChild > article {
   display: flex;
   align-items: center;
@@ -169,7 +185,7 @@ Select {
 
 .ViewChild > article h6 {
   text-align: left;
-  font-family: "Poppins", sans-serif;
+  font-family: Poppins, sans-serif;
   font-size: 18px;
   line-height: 69px;
   font-weight: 500;
@@ -419,4 +435,63 @@ Select {
 .Pagination.angle-right {
   background: #262a41 0% 0% no-repeat padding-box;
   box-shadow: 4px 5px 20px #0000001a;
+}
+
+.AnimateViewChildOut {
+  animation-name: AnimateViewChild !important;
+  animation-duration: 300ms !important;
+}
+
+.AnimateUserListOut {
+  animation-name: AnimateUserList !important;
+  animation-duration: 400ms !important;
+}
+
+.AnimateUserListOut,
+.AnimateViewChildOut {
+  animation-direction: reverse;
+  animation-timing-function: ease-out;
+}
+
+
+/* //  KEYFRAMES  // */
+
+@keyframes AnimateViewChild {
+  0% {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes AnimateUserList {
+  0% {
+    opacity: 0;
+    transform: translateY(-180px);
+    z-index: 0;
+  }
+
+  70% {
+    opacity: .5;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    z-index: 3;
+  }
+}
+
+@keyframes FadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }

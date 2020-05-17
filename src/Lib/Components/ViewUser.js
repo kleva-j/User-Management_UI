@@ -21,7 +21,7 @@ const style = {
   },
 };
 
-export const ViewUser = ({ result, setDisplay }) => {
+export const ViewUser = ({ result, setDisplay, className }) => {
   const {
     id,
     age,
@@ -34,7 +34,7 @@ export const ViewUser = ({ result, setDisplay }) => {
     reg
   } = result;
   return (
-    <section data-id={id} className="ViewChild">
+    <section data-id={id} className={`ViewChild${className}`}>
       <article onClick={setDisplay}>
         <FaArrowLeft style={{ ...style.shared, ...style.arrowLeft }} />
         <h6>RESULTS</h6>

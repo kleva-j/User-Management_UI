@@ -3,7 +3,7 @@ import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
 import { IoIosCloudDownload } from "react-icons/io";
 import { CSVLink } from "react-csv";
 
-import { UserList } from "../Lib/Containers/UserListContainer";
+import { UserList } from "../../Lib/Containers/UserListContainer";
 
 import "./right.css";
 

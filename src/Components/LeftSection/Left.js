@@ -10,6 +10,7 @@ export const LeftComponent = ({ findUser, children }) => {
     }
     return;
   };
+
   return (
     <section className="Left-section">
       <article className="container">

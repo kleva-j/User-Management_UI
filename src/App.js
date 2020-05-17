@@ -2,8 +2,8 @@ import React from "react";
 
 import "./App.css";
 import UserApi, { fetchUsers } from "./Lib/Utils";
-import { RightComponent } from "./components/Right";
-import { LeftComponent } from "./components/Left/Left";
+import { RightComponent } from "./Components/RightSection/Right";
+import { LeftComponent } from "./Components/LeftSection/Left";
 import { ButtonItem } from "./Lib/Components/ButtonItem";
 import { ButtonContainer } from "./Lib/Containers/ButtonContainer";
 import { FilterComponent } from "./Lib/Components/FilterComponent";
@@ -17,7 +17,7 @@ export const App = () => {
     currentCategory: "All Users",
     categories: ["All Users", "Male Users", "Female Users"],
     searchTerm: "",
-    countries: []
+    countries: [],
   });
 
   const setCategory = (category) => {
@@ -54,7 +54,7 @@ export const App = () => {
     setState((prevState) => ({
       ...prevState,
       searchTerm: name,
-      users: UserApi.searchByName(name)
+      users: UserApi.searchByName(name),
     }));
 
   React.useEffect(() => {
@@ -69,10 +69,9 @@ export const App = () => {
           countries: UserApi.getCountries(users),
         }));
       })
-      .catch((err) => {
-        console.log(err)
+      .catch((_) =>
         setState((prevState) => ({ ...prevState, loading: false }))
-      });
+      );
   }, []);
 
   const { categories, currentCategory, users, countries } = state;
