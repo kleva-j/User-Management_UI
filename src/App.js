@@ -17,8 +17,6 @@ export const App = () => {
     currentCategory: "All Users",
     categories: ["All Users", "Male Users", "Female Users"],
     searchTerm: "",
-    showCountry: true,
-    country: undefined,
     countries: []
   });
 
@@ -33,22 +31,24 @@ export const App = () => {
 
   const setUsers = (name) => {
     name === "all" &&
-      setState((prevState) => ({ ...prevState, users: UserApi.allUsers }));
+      setState((prevState) => {
+        const users = UserApi.allUsers;
+        const countries = UserApi.getCountries(users);
+        return { ...prevState, users, countries };
+      });
     name === "male" &&
-      setState((prevState) => ({ ...prevState, users: UserApi.allMaleUsers }));
+      setState((prevState) => {
+        const users = UserApi.allMaleUsers;
+        const countries = UserApi.getCountries(users);
+        return { ...prevState, users, countries };
+      });
     name === "female" &&
-      setState((prevState) => ({
-        ...prevState,
-        users: UserApi.allFeMaleUsers,
-      }));
+      setState((prevState) => {
+        const users = UserApi.allFeMaleUsers;
+        const countries = UserApi.getCountries(users);
+        return { ...prevState, users, countries };
+      });
   };
-
-  const setCountry = (country) => 
-    setState((prevState) => ({
-      ...prevState,
-      country,
-      users: UserApi.filterByCountry(country)
-    }));
 
   const findUser = (name) =>
     setState((prevState) => ({
@@ -57,26 +57,22 @@ export const App = () => {
       users: UserApi.searchByName(name)
     }));
 
-  const showCountry = () =>
-    setState((prevState) => ({
-      ...prevState,
-      showCountry: !state.showCountry,
-    }));
-
   React.useEffect(() => {
     fetchUsers(URL)
       .then((result) => {
         UserApi.userDetails = result;
+        const users = UserApi.allUsers;
         setState((prevState) => ({
           ...prevState,
+          users,
           loading: false,
-          users: UserApi.allUsers,
-          countries: UserApi.allCountries,
+          countries: UserApi.getCountries(users),
         }));
       })
-      .catch((_) =>
+      .catch((err) => {
+        console.log(err)
         setState((prevState) => ({ ...prevState, loading: false }))
-      );
+      });
   }, []);
 
   const { categories, currentCategory, users, countries } = state;
@@ -95,16 +91,11 @@ export const App = () => {
         <RightComponent
           category={currentCategory}
           findUser={UserApi.searchByName}
-          setCountry={setCountry}
-          showCountry={showCountry}
           users={users}
+          countries={countries}
+          filterByCountry={UserApi.filterByCountry}
         >
-          <FilterComponent
-            countries={countries}
-            showCountry={state.showCountry}
-            setShowCountry={showCountry}
-            setCountry={setCountry}
-          />
+          <FilterComponent countries={countries} />
         </RightComponent>
       </section>
     </section>

@@ -15,7 +15,7 @@ export const FilterComponent = (props) => {
     countries = [],
     showCountry,
     setShowCountry,
-    setCountry,
+    filterByCountry,
     inputRef,
     handleChange,
     isListItem,
@@ -25,7 +25,7 @@ export const FilterComponent = (props) => {
     const value = event.target.value;
     if (value === 'Country') return;
     if (value) {
-      return setCountry(event.target.value);
+      return filterByCountry(event.target.value);
     }
   };
 

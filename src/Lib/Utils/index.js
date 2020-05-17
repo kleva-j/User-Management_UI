@@ -56,15 +56,13 @@ export class UserApi {
   /**
    * @memberof UserApi
    * @public
-   * @param {string} country Country name
-   * @param {Array} countryList List of available countries
-   * @returns {Array} Users in selected country
+   * @param {Array} dataList List of Users data
+   * @returns {Function}
    */
-  filterByCountry(country, countryList) {
-    if (countryList) {
-      return countryList.filter(item => item.country === country);
+  filterByCountry(dataList) {
+    return (country) => {
+      return dataList.filter(item => item.country === country);
     }
-    return this.userData.filter(item => item.country === country);
   };
 
   /**
@@ -111,6 +109,21 @@ export class UserApi {
       return namesList.filter(item => item.name.toLowerCase().includes(name.toLowerCase()));
     }
     return this.userData.filter(item => item.name.toLowerCase().includes(name.toLowerCase()));
+  };
+
+    /**
+   * @memberof UserApi
+   * @public
+   * @param {Array} namesList Nameslist
+   * @returns {Array} Fetch countries from user data
+   */
+  getCountries(namesList) {
+    const newList = [];
+    namesList.filter(item => {
+      if (newList.includes(item.country)) return;
+      return newList.push(item.country);
+    });
+    return newList;
   };
 };
 
