@@ -91,7 +91,6 @@ export const App = () => {
           category={currentCategory}
           findUser={UserApi.searchByName}
           users={users}
-          countries={countries}
           filterByCountry={UserApi.filterByCountry}
         >
           <FilterComponent countries={countries} />

@@ -32,10 +32,16 @@ export const ViewUser = ({ result, setDisplay, className }) => {
     phone,
     phone2,
     reg
-  } = result;
+  } = React.useMemo(() => result, [result]);
+
+  const setCurrentDisplay = React.useCallback(
+    () => setDisplay(),
+    [setDisplay]
+  );
+
   return (
     <section data-id={id} className={`ViewChild${className}`}>
-      <article onClick={setDisplay}>
+      <article onClick={setCurrentDisplay}>
         <FaArrowLeft style={{ ...style.shared, ...style.arrowLeft }} />
         <h6>RESULTS</h6>
       </article>

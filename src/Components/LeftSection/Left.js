@@ -2,14 +2,18 @@ import React from "react";
 import { FaSearch } from "react-icons/fa";
 import "./left.css";
 
-export const LeftComponent = ({ findUser, children }) => {
+const styles = {
+  searchIcon: { position: "relative", left: -580, top: 10 } 
+};
+
+export const LeftComponent = React.memo(({ findUser, children }) => {
   const inputRef = React.createRef();
-  const handleKeyPress = (event) => {
+
+  const handlePress = React.useCallback((event) => {
     if (event.key === "Enter") {
-      return findUser(inputRef.current.value);
+      findUser(inputRef.current.value);
     }
-    return;
-  };
+  }, [inputRef, findUser]);
 
   return (
     <section className="Left-section">
@@ -26,10 +30,10 @@ export const LeftComponent = ({ findUser, children }) => {
             type="text"
             ref={inputRef}
             placeholder="Find a user"
-            onKeyPress={handleKeyPress}
+            onKeyPress={handlePress}
             className="form-control"
           />
-          <FaSearch style={{ position: "relative", left: -580, top: 10 }} />
+          <FaSearch style={styles.searchIcon} />
         </aside>
         <aside className="Bottom-section">
           <h6 className="Show-users">Show Users</h6>
@@ -38,4 +42,4 @@ export const LeftComponent = ({ findUser, children }) => {
       </article>
     </section>
   );
-};
+});

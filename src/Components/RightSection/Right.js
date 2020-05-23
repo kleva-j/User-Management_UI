@@ -13,11 +13,12 @@ const styles = {
     verticalAlign: "middle",
     alignSelf: "center",
   },
+  flexItem: { display: "flex", flexDirection: "column" }
 };
 
 const limit = 3;
 
-export const RightComponent = (props) => {
+export const RightComponent = React.memo((props) => {
   const { category, children, users, findUser, filterByCountry } = props;
   const [search, setSearch] = React.useState(users);
   const noOfPages = Math.round(search.length / limit);
@@ -36,7 +37,7 @@ export const RightComponent = (props) => {
 
   const { offset, currentPage, pages, isListItem, showCountry } = state;
 
-  const moveNext = () => {
+  const moveNext = React.useCallback(() => {
     if (pages <= currentPage) return;
     if (pages > currentPage) {
       return setState((prevState) => ({
@@ -45,28 +46,36 @@ export const RightComponent = (props) => {
         offset: offset + limit,
       }));
     }
-  };
+  }, [currentPage, offset, pages]);
 
-  const handleChange = () =>
-    setSearch(() => findUser(inputRef.current.value, users));
+  const handleChange = React.useCallback(
+    () => setSearch(() => findUser(inputRef.current.value, users)),
+    [findUser, inputRef, users]
+  );
 
-  const moveBack = () => {
+  const moveBack = React.useCallback(() => {
     if (currentPage <= 1) return;
     return setState((prevState) => ({
       ...prevState,
       currentPage: currentPage - 1,
       offset: offset - limit,
     }));
-  };
+  }, [currentPage, offset]);
 
-  const setShowCountry = () =>
-    setState((prevState) => ({ ...prevState, showCountry: !showCountry }));
+  const setShowCountry = React.useCallback(
+    () => setState((prevState) => ({ ...prevState, showCountry: !showCountry })),
+    [showCountry]
+  );
 
-  const setDisplay = () =>
-    setState((prevState) => ({ ...prevState, isListItem: !isListItem }));
+  const setDisplay = React.useCallback(
+    () => setState((prevState) => ({ ...prevState, isListItem: !isListItem })),
+    [isListItem]
+  );
 
-  const setResultByCountry = (value) =>
-    setSearch(() => filterByCountry(users)(value));
+  const setResultByCountry = React.useCallback(
+    (value) => setSearch(() => filterByCountry(users)(value)),
+    [users, filterByCountry]
+  );
 
   React.useEffect(() => {
     setSearch(() => users);
@@ -84,7 +93,7 @@ export const RightComponent = (props) => {
 
   return (
     <section className="Right-section">
-      <div style={{ display: "flex", flexDirection: "column" }}>
+      <div style={styles.flexItem}>
         <h3 className="Heading">{isListItem ? category : "User List"}</h3>
         <p className="filterBy">Filter by</p>
         {React.cloneElement(children, {
@@ -137,4 +146,4 @@ export const RightComponent = (props) => {
       </div>
     </section>
   );
-};
+});
